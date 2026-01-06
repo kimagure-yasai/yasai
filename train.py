@@ -57,7 +57,7 @@ loss_fn = torch.nn.CrossEntropyLoss()
 learning_rate = 1e-3 #学習率
 optimizer = torch.optim.SGD(model.parameters(),lr = learning_rate)
 
-n_epochs = 3
+n_epochs = 20
 
 train_loss_log = []
 val_loss_log = []
@@ -72,13 +72,13 @@ for epoch in range(n_epochs):
     time_start = time.time()
     train_loss = models.train(model, dataloader_train, loss_fn, optimizer)
     time_end = time.time()
-    print(f"training loss: {train_loss} ({time_end-time_start:.3f}s)")
+    print(f"training loss: {train_loss:.3f} ({time_end-time_start:.3f}s)")
     train_loss_log.append(train_loss)
 
     time_start = time.time()
     val_loss = models.test(model, dataloader_test, loss_fn)
     time_end = time.time()
-    print(f"validation loss: {val_loss} ({time_end-time_start:.3f}s)")
+    print(f"validation loss: {val_loss:.3f} ({time_end-time_start:.3f}s)")
     val_loss_log.append(val_loss)
 
     time_start = time.time()
