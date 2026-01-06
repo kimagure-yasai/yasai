@@ -47,7 +47,7 @@ dataloader_test = torch.utils.data.DataLoader(
 #    print(label_batch.shape)
 
 #GPU か CPU を自動的に選ぶ
-device = "cuba" if torch.cuda.is_available() else "cpu"
+device = "cuda" if torch.cuda.is_available() else "cpu"
 
 #モデルのインスタンスを作成
 model = models.MyModel()
