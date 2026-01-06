@@ -24,7 +24,7 @@ ds_train = datasets.FashionMNIST(
 
 ds_test = datasets.FashionMNIST(
     root="data",
-    train=True,
+    train=False,
     download=True,
     transform=ds_transform
 )
